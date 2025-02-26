@@ -1,0 +1,1220 @@
+/* Cài đặt cơ bản */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Thanh menu chính */
+header.menu {
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px; /* Tăng chiều cao thanh menu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.menu .logo img {
+    height: 80px;
+    width: auto;
+    border-radius: 0 0 20% 20%; /* Bo tròn phía dưới */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Đổ bóng phía dưới */
+    padding: 5px; /* Tạo khoảng trống bên trong logo */
+    
+}
+
+/* Thanh điều hướng */
+.menu nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu nav ul li {
+    position: relative;
+    margin: 0 20px;
+}
+
+.menu nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px; /* Tăng kích thước chữ */
+    padding: 10px 20px;
+    transition: color 0.3s;
+}
+
+.menu nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Dropdown menu */
+.menu nav ul .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.menu nav ul .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #222;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    list-style: none;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.menu nav ul .dropdown-menu li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu nav ul .dropdown-menu li a:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+.menu nav ul .dropdown-menu li img {
+    width: 70px; /* Đặt chiều rộng tối đa cho hình ảnh */
+    height: 70px; /* Đặt chiều cao cho hình ảnh */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    margin-bottom: 8px; /* Khoảng cách dưới hình ảnh */
+    display: flex;
+    border-radius: 5px; /* Làm bo góc ảnh (tùy chọn) */
+    transition: transform 0.3s ease;
+}
+.dropdown-menu li img:hover {
+    transform: scale(1.1); /* Hiệu ứng zoom ảnh khi hover */
+}
+
+/* Nút "Hệ thống Cửa Hàng" và "Giao hàng McDelivery" */
+.delivery-options {
+    display: flex;
+    gap: 10px;
+
+}
+.delivery-options a
+{
+    text-decoration: none;
+}
+.store-button, .delivery-button {
+    background-color: #ff3300;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Tạo khoảng cách giữa icon và chữ */
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.store-button:hover, .delivery-button:hover {
+    background-color: #ff5733;
+    transform: translateY(-2px);
+}
+
+/* Icon trong nút */
+.store-button i, .delivery-button i {
+    font-size: 18px;
+}
+/* Hình ảnh banner chạy */
+/* Vùng chứa banner */
+.banner-wrapper {
+    width: 100%;
+    overflow: hidden; /* Chỉ hiển thị phần trong khung nhìn */
+    position: relative;
+    height: 500px; /* Chiều cao của banner */
+    margin-top: 3px; /* Cách lề trên một chút */
+}
+
+/* Chứa các banner */
+.banners {
+    display: flex;
+    width: calc(900px * 8); /* Tổng chiều rộng của tất cả các banner trong container (8 banner) */
+    animation: moveBanners 40s linear infinite; /* Animation chạy liên tục */
+}
+
+/* Cấu hình cho mỗi banner */
+.banner {
+    width: 1000px; /* Chiều rộng của mỗi banner */
+    height: 500px; /* Chiều cao của banner dài hơn */
+    flex-shrink: 0; /* Không cho các banner co lại */
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giữ tỷ lệ hình ảnh không bị méo */
+}
+
+/* Keyframes cho chuyển động của banners */
+@keyframes moveBanners {
+    0% {
+        transform: translateX(0); /* Bắt đầu từ vị trí ban đầu */
+    }
+    100% {
+        transform: translateX(-100%); /* Di chuyển sang trái hết 1 vòng */
+    }
+}
+/* Đáp ứng (Responsive) */
+@media (max-width: 768px) {
+    header.navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .delivery-options {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .promo-content h2 {
+        font-size: 20px;
+    }
+
+    .promo-content p {
+        font-size: 16px;
+    }
+}
+/* Footer chung */
+footer.footer {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Phần đầu footer */
+.footer-top {
+    text-align: center;
+    margin-bottom: 20px;
+    background-image: url(image/ndbuger.png);
+    background-size: cover;
+    height: 200px;
+    padding-top: 20px;
+    padding-right: 750px;
+}
+
+.footer-top h1 {
+    font-size: 35px;
+    color: #000000;
+    margin-bottom: 10px;
+
+}
+
+.footer-top p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.order-now-btn {
+    background-color: #bd0017;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.order-now-btn:hover {
+    background-color: #ff5733;
+    
+}
+
+/* Phản hồi */
+.feedback-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feedback-left {
+    flex: 1;
+
+}
+
+.feedback-left p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.feedback-btn {
+    background-color: #bd0017;
+    color: white;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 172px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.feedback-btn:hover {
+    background-color: #d32f2f;
+}
+
+.feedback-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 100px;
+}
+
+.feedback-right input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.feedback-right .send-btn {
+    background-color: #bd0017;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.send-btn a
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+.feedback-right .send-btn:hover {
+    background-color: #d32f2f;
+}
+
+.feedback-right p {
+    font-size: 12px;
+    color: #777;
+}
+
+.feedback-right span {
+
+    color: #555;
+}
+/* content PHẦN GIỮA */
+.content .top
+{
+    background-image: url(image/ndbanner.jpg);
+    background-size: cover;
+    height: 350px;
+
+}
+.content .top h1
+{
+    color: white;
+    font-family: Arial;
+    padding-left: 50px;
+}
+.content .top p
+{
+    color: rgb(239, 234, 234);
+    font-family: Arial;
+    margin-left: 50px;
+    padding-top: 120px;
+    
+}
+
+.gioithieu {
+    display: flex;
+    gap: 15px; /* Khoảng cách giữa các box */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 10px;
+}
+
+.box {
+    width: 320px; /* Tăng kích thước box */
+    height: 200px;
+    position: relative; /* Để định vị chữ */
+    border-radius: 15px; /* Bo góc lớn hơn */
+    overflow: hidden; /* Ẩn phần dư của hình ảnh */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Bóng mờ */
+    transition: transform 0.2s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.1); /* Phóng to khi hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Bóng mờ đậm hơn */
+}
+
+.box img {
+    width: 100%; /* Hình ảnh phủ toàn bộ box */
+    height: 100%;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+}
+
+.box span {
+    position: absolute; /* Đặt vị trí chữ */
+    bottom: 10px; /* Căn dưới */
+    left: 10px; /* Căn trái */
+    color: white; /* Màu chữ trắng */
+    font-size: 16px; /* Tăng kích thước chữ */
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Tạo bóng chữ để dễ đọc */
+}
+
+.order-button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-left: 50px
+}
+/* Phần cuối footer */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px gray solid;
+    padding-top: 10px ;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    transition: color 0.3s;
+    font-family: sans-serif;
+}
+
+.footer-column ul li a:hover {
+    color: #ff3300;
+}
+
+/* Biểu tượng mạng xã hội */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    font-size: 30px;
+    color: #555;
+    transition: color 0.3s;
+}
+.social-icons i
+{
+    font-size: 20px;
+}
+.social-icons a:hover {
+    color: #ff3300;
+}
+
+/* Ngôn ngữ */
+.language {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.language a img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s;
+}
+
+.language a img:hover {
+    border-color: #ff3300;
+}
+.tag {
+    background-color: #333;
+    color: white;
+    text-align: right;
+    font-family: Verdana;
+    font-size: 13px;
+    width: 100%;
+    height: 40px;
+}
+.tag p
+{
+    padding-right: 100px;
+    padding-top: 10px;
+}
+
+/* TRANG LỊCH SỬ PHẦN TÌM HIỂU 1*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI';
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.history {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-top {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.banner-top img {
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.text-overlay h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: white;
+    font-weight: normal;
+
+    
+}
+
+.text-overlay h2 {
+    margin-bottom: 0;
+    margin-left: 30px;
+}
+
+.frist-content {
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    gap: 20px;
+}
+
+.left-column {
+    width: 60%;
+    color: #444;
+    
+}
+
+.left-column h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #bd0017;
+    font-family: 'Segoe UI';
+}
+
+.left-column p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    
+}
+
+.right-column {
+    width: 40%;
+}
+
+.history-image {
+    width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+}
+.VN-image {
+    width: 600px;
+    height: auto;
+    margin-bottom: 20px;
+}
+.quote {
+    font-size: 13px;
+    font-style: italic;
+    font-family: 'Segoe UI';
+    color: #bd0017;
+    text-align: center;
+    
+    margin-bottom: 10px;
+}
+.quote b
+{
+    font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+    }
+
+    .banner img {
+        width: 100%;
+    }
+}
+.bottom-image {
+    width: 100%; /* Đảm bảo chiều rộng của vùng chứa chiếm toàn bộ màn hình */
+    margin: 0; /* Loại bỏ margin */
+    padding: 0; /* Loại bỏ padding */
+}
+
+.bottom-image img {
+    width: 100%; /* Chiều rộng của ảnh chiếm toàn bộ chiều rộng vùng chứa */
+    height: auto; /* Chiều cao tự động để duy trì tỷ lệ ảnh */
+    object-fit: cover; /* Đảm bảo ảnh phủ hết toàn bộ vùng chứa mà không bị méo */
+    display: block; /* Loại bỏ khoảng trống dưới ảnh */
+}
+.left-column-ct p
+{
+    text-align: center;
+    color: #bd0017;
+    width: 100%;
+    margin-left: 172px;
+    margin-bottom: 5px;
+    font-family: 'Segoe UI';
+    font-style: italic;
+}
+.left-column-ct
+{
+    margin-bottom: 10px;
+}
+.left-column-1 {
+    width: 60%;
+    color: #444;
+    margin-top: 30px;
+    float: left; /* Căn trái */
+}
+
+.left-column-11 {
+    width: 100%;
+    color: #444;
+    margin-top: 30px;
+
+}
+.left-column-11 h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #bd0017;
+    font-family: 'Segoe UI';
+    margin-left: 197px;
+}
+.left-column-11 p
+{
+    text-align: justify;
+    width: 80%;
+    margin-left: 200px;
+}
+.left-column-1 h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #bd0017;
+    font-family: 'Segoe UI';
+}
+
+.right-column-1 {
+    width: 35%; /* Chỉnh lại kích thước để vừa với không gian */
+    color: #444;
+    margin-top: 30px;
+    float: right; /* Căn phải */
+}
+
+.right-column-1 h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #bd0017;
+    font-family: 'Segoe UI';
+}
+
+.history::after {
+    content: "";
+    display: table;
+    clear: both; /* Clear float */
+}
+.bottom-image-ls {
+    margin-bottom: 20px;
+    background-image: url(https://mcdonalds.vn/public/images/nguon-goc-1.png);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    padding-top: 100px;
+    color: #000000;
+    
+}
+
+.bottom-image-ls p
+{
+    width: 80%;
+    padding-left: 150px;
+    color: #f4f4f4;
+}
+.bottom-image-ls h1
+{
+    margin-bottom: 10px;
+    font-size: 50px;
+    padding-left: 127px;
+    color: #ffffff;
+}
+.bottom-image-1 {
+    margin-bottom: 20px;
+    background-image: url(https://static.wixstatic.com/media/a43617_2b1f4313f8754ec1b74013d2f2a7902f~mv2.jpg/v1/fill/w_1920,h_1277,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/a43617_2b1f4313f8754ec1b74013d2f2a7902f~mv2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    padding-top: 100px;
+    color: #000000;
+    
+}
+
+.bottom-image-1 p
+{
+    width: 80%;
+    padding-left: 150px;
+    color: #f4f4f4;
+}
+.bottom-image-1 h1
+{
+    margin-bottom: 10px;
+    font-size: 50px;
+    padding-left: 150px;
+}
+.bottom-image-2 {
+
+    background-image: url(https://mcdonalds.vn/public/images/xnha-cung-cap-1.png.pagespeed.ic.RHlZAuMH5w.webp);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    padding-top: 100px;
+
+    
+}
+.bottom-image-2 p
+{
+    width: 60%;
+    padding-left: 150px;
+    color: #f4f4f4;
+}
+.bottom-image-2 h3
+{
+    margin-bottom: 10px;
+    font-size: 36px;
+    padding-left: 150px;
+    color: #f4f4f4;
+}
+.bottom-image-3 {
+    margin-bottom: 20px;
+    background-image: url(https://mcdonalds.vn/public/images/nguon-goc-1.png);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    padding-top: 150px;
+    color: #000000;
+    
+}
+.bottom-image-3 p
+{
+    width: 50%;
+    padding-left: 150px;
+    color: #f4f4f4;
+}
+.bottom-image-3 h3
+{
+    margin-bottom: 10px;
+    font-size: 36px;
+    padding-left: 150px;
+    color: #f4f4f4;
+}
+.bottom-image-4 {
+
+    background-image: url(https://cmx.weightwatchers.com/assets-proxy/weight-watchers/image/upload/v1594406683/visitor-site/prod/ca/burgers_mobile_my18jv);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    padding-top: 200px;
+    
+}
+.bottom-image-4 p
+{
+    width: 35%;
+    padding-left: 50px;
+    color: #f4f4f4;
+}
+.bottom-image-4 h3
+{
+    margin-bottom: 10px;
+    font-size: 36px;
+    padding-left: 50px;
+    color:  #c60000;
+}
+.bottom-image-5 {
+
+    background-image: url(https://i.pinimg.com/736x/78/04/61/7804615df9be88699701ed4e972e821b.jpg);
+    background-size: cover;
+    background-position: 320px;
+    height: 700px;
+    padding-top: 20px;
+    color: #000000;
+    
+}
+.bottom-image-5 p
+{
+    width: 50%;
+    padding-left: 150px;
+    color: #444;
+}
+.bottom-image-5 h3
+{
+    margin-bottom: 10px;
+    font-size: 36px;
+    padding-left: 150px;
+    color: #000000;
+}
+.bottom-image-6 {
+    margin-bottom: 20px;
+    background-image: url(https://i.pinimg.com/originals/aa/d9/f5/aad9f5ae74471afc179d2875a5981f7a.gif);
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    padding-top: 150px;
+    color: #000000;
+    
+}
+.bottom-image-6 p
+{
+    width: 30%;
+    padding-left: 100px;
+    color: #000000;
+}
+.bottom-image-6 h3
+{
+    margin-bottom: 10px;
+    font-size: 36px;
+    padding-left: 100px;
+    color: #000000;
+}
+.order-now-1 {
+    background-color: #bd0017;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+/* Thực Đơn */
+h1 {
+    margin: 20px;
+    color: #333;
+}
+
+.menu-combo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    font-family: 'Segoe UI';
+}
+.menu-burger {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    font-family: 'Segoe UI';
+}
+.menu-chicken {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    font-family: 'Segoe UI';
+}
+.menu-chicken2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    font-family: 'Segoe UI';
+}
+.item {
+    position: relative;
+    width: 200px; /* Thay đổi độ rộng nếu cần */
+    height: 350px; /* Thêm hoặc chỉnh sửa chiều cao */
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s;
+    overflow: hidden;
+    font-family: 'Segoe UI';
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+}
+
+.item h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.order-btn {
+    position: absolute;
+    bottom: 30px; /* Đặt nút bên dưới chữ Burger */
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    background-color: #bd0017;
+    color: white;
+    border: none;
+    padding: 10px 50px; /* Tăng khoảng cách ngang bên trong nút */
+    width: 190px; /* Đặt chiều rộng cố định nếu cần */
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center; /* Căn giữa chữ bên trong */
+}
+
+.item:hover .order-btn {
+    display: block;
+}
+
+.item:hover h3 {
+    margin-bottom: 10px; /* Tăng khoảng cách chữ Burger với nút */
+}
+/* Tin Tức */
+main {
+    padding: 20px;
+}
+
+.NEWS {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.NEWS .left {
+    width: 50%;
+}
+
+.NEWS .right {
+    width: 48%;
+}
+
+.NEWS img {
+    width: 100%;
+    height: auto;
+}
+
+.text h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #c60000;
+    border: #c60000 1px solid;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+.news-item {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.news-item img {
+    width: 30%;
+    margin-right: 20px;
+    height: auto;
+}
+
+.news-text h3 {
+    font-size: 20px;
+}
+
+.news-text p {
+    font-size: 14px;
+    color: #555;
+}
+/* Liên Hệ */
+.lienhe {
+    width: 100%;
+    padding: 20px;
+    font-family: 'Segoe UI';
+}
+h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.lienhe-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.lienhe-left {
+    width: 60%;
+    padding-right: 20px;
+}
+
+.lienhe-left span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.lienhe-left input, .lienhe-left textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Segoe UI';
+}
+
+.lienhe-left textarea {
+    height: 150px;
+}
+
+.captcha {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #b5000f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #dc2534;
+}
+
+.lienhe-right {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+}
+
+.lienhe-right img {
+    width: 100%;
+    height: auto;
+}
+/* Hệ Thống */
+.hethong {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.hethong-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Giữa các phần tử có khoảng cách */
+}
+
+.hethong-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Căn giữa các phần tử trong hàng ngang */
+    gap: 10px;  /* Khoảng cách giữa các dropdown */
+    width: 60%;  /* Cân chỉnh tỷ lệ chiều rộng */
+}
+
+.location-selection {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.location-selection span {
+    display: block;
+    margin-right: 10px; /* Khoảng cách giữa span và select */
+    font-weight: bold;
+}
+
+.location-selection select {
+    width: 200px;  /* Thay đổi chiều rộng tại đây */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;  /* Bo tròn */
+}
+
+.hethong-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-btn {
+    padding: 15px 50px;  /* Điều chỉnh chiều rộng của nút */
+    background-color: #b5000f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 200px; /* Khoảng cách bên phải (có thể điều chỉnh lại nếu cần) */
+    text-align: center;  /* Căn chỉnh chữ nằm ngang */
+    width: auto;  /* Để chiều rộng tự động điều chỉnh theo nội dung */
+}
+
+.search-btn:hover {
+    background-color: #e22d3c;
+}
+
+/*  */
+.store-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Khoảng cách giữa các box */
+    justify-content: center; /* Căn giữa các box */
+}
+
+.store-info {
+    width: 48%; /* Đặt chiều rộng của mỗi box là 48% để vừa với 2 cột */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.store-info:hover {
+    border-color: red; /* Viền đỏ khi hover */
+}
+
+.store-details {
+    text-align: left;
+}
+
+.store-details h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c60000;
+}
+
+.store-details .address, .store-details .opening-hours, .store-details .phone {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.icons {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.icons .icon {
+    font-size: 20px;
+    color: #333;
+}
+
+.google-maps-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    background-color: #c60000;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.google-maps-btn .maps-icon {
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.google-maps-btn:hover {
+    background-color: #e84343;
+}

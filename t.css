@@ -1,0 +1,158 @@
+/* Tổng thể body */
+body {
+    font-family: 'Segoe UI';
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 0;
+    background-size: cover;
+    background-image: url(https://tse4.mm.bing.net/th?id=OIP.6qXkrEJ4goYvxzQQ4IkNgQHaEK&pid=Api&P=0&h=220) ;
+}
+
+/* Form đăng ký */
+.registration-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2); /* Tăng cường bóng đổ */
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #b5000f; /* Viền đỏ đậm để làm nổi bật hơn */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Khi hover vào form */
+.registration-form:hover {
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.3); /* Bóng đổ đậm hơn khi hover */
+    transform: translateY(-10px); /* Nâng form lên một chút khi hover */
+}
+
+/* Tiêu đề của form */
+.registration-form h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Nhóm các trường thông tin */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+/* Trường nhập thông tin (input, select, textarea) */
+input[type="text"], input[type="email"], input[type="tel"], input[type="datetime-local"], select, textarea {
+    width: 100%;
+    padding: 12px; /* Tăng kích thước padding */
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Thêm hiệu ứng khi hover vào trường nhập */
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="datetime-local"]:focus, select:focus, textarea:focus {
+    border-color: #b5000f;
+    outline: none;
+    box-shadow: 0 0 8px rgba(181, 0, 15, 0.3); /* Thêm hiệu ứng bóng đổ cho trường nhập */
+}
+
+/* Các lựa chọn phương thức thanh toán */
+.payment-methods input {
+    margin-right: 10px;
+}
+
+.payment-methods label {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+/* Nút gửi */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #b5000f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #90000f; /* Thay đổi màu nền khi hover */
+}
+
+/* Các liên kết (a) */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Thêm bóng đổ cho các phần tử box */
+.payment-methods, .form-group {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Tăng bóng đổ cho các nhóm */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Điều chỉnh phần ghi chú */
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+/* Các phần tử input ở dưới cùng có màu viền khi focus */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="checkbox"]:focus {
+    border-color: #b5000f;
+}
+
+/* Phần hover của các checkbox */
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+/* Điều chỉnh các phần dropdown */
+select {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #b5000f;
+    outline: none;
+    box-shadow: 0 0 8px rgba(181, 0, 15, 0.3); /* Thêm bóng đổ cho select */
+}
+
+/* Cải thiện bố cục của các phần tử trên form */
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Tạo padding thêm cho các phần tử như buttons và inputs */
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group input[type="datetime-local"], .form-group select, .form-group textarea {
+    padding: 12px;
+}
